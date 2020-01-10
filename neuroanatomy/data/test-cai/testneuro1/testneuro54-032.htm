@@ -1,0 +1,489 @@
+<html>
+<head>
+<title>Un title page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-874">
+<style type="text/css">
+<!--
+body {  margin: 0px  0px; padding: 0px  0px}
+a:link { color: #005CA2; text-decoration: none}
+a:visited { color: #005CA2; text-decoration: none}
+a:active { color: #0099FF; text-decoration: underline}
+a:hover { color: #0099FF; text-decoration: underline}
+body,td,th {
+	font-size: 18px;
+	font-family: CordiaUPC;
+}
+.style1 {
+	color: #0000FF;
+	font-weight: bold;
+}
+-->
+</style>
+<script language="JavaScript"></script>
+<script language="JavaScript" src="file:///D|/anatomy-CAI/neurolab234B/test/scripts/behActions.js"></script>
+<script language="JavaScript" src="file:///D|/anatomy-CAI/neurolab234B/test/scripts/behCourseBuilder.js"></script>
+<script language="JavaScript" src="file:///D|/anatomy-CAI/neurolab234B/test/scripts/interactionClass.js"></script>
+<script language="JavaScript" src="file:///D|/anatomy-CAI/neurolab234B/test/scripts/elemTextClass.js"></script>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<script language="JavaScript" src="file:///D|/anatomy-CAI/neurolab234/test/scripts/behActions.js"></script>
+<script language="JavaScript" src="file:///D|/anatomy-CAI/neurolab234/test/scripts/behCourseBuilder.js"></script>
+<script language="JavaScript" src="file:///D|/anatomy-CAI/neurolab234/test/scripts/interactionClass.js"></script>
+<script language="JavaScript" src="file:///D|/anatomy-CAI/neurolab234/test/scripts/elemTextClass.js"></script>
+<script language="JavaScript" src="scripts/behActions.js"></script>
+<script language="JavaScript" src="scripts/behCourseBuilder.js"></script>
+<script language="JavaScript" src="scripts/interactionClass.js"></script>
+<script language="JavaScript" src="scripts/elemTextClass.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF" onLoad="MM_initInteractions()" background="file:///D|/anatomy-CAI/background/Bubble.gif">
+<div id="Layer1" style="position:absolute; left:508px; top:19px; width:352px; height:387px; z-index:1">
+  <p><img src="../test1/lab-test032.jpg" width="555" height="617"></p>
+  <p>&nbsp;</p>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;จงเติมคำในกล่องข้อความตามหมายเลข 
+  Organ ในรูปให้ถูกต้อง (ใช้ภาษาอังกฤษ) <br>
+  <font color="#0000FF"><b>หมายเหตุ </b></font>ควรตรวจสอบการสะกดคำ การเว้นวรรค 
+  ให้ถูกต้องก่อนกดปุ่มตรวจ</p>
+<interaction name="Text_Singleline01" object="G01" template="050_Text Entry/010_Text_Singleline_03.agt" includesrc="interactionClass.js,elemTextClass.js"> 
+<span name="G01question"><br>
+</span> 
+<form name="G01elem" onSubmit="return false">
+  <blockquote>
+    <p> 1. บอกชื่อแอ่งที่เข็มหมุดดำปัก<br>
+        <input name="G01elemInp" type="text" onFocus="G01.e['elem'].focus()" onBlur="G01.e['elem'].update()" value="" size="35">
+        <input name="G01reset" type="BUTTON" value="ขอตอบใหม่" onClick="MM_resetInt('G01','reset','')">
+        <input name="G01judge" type="BUTTON" value="ตรวจคำตอบ" onClick="MM_judgeInt('G01')">
+    <cbi-select object="G01">
+    <script language="JavaScript">
+<!--
+  // Copyright 1998,1999 Macromedia, Inc. All rights reserved.
+  function newG01() {
+    G01 = new MM_interaction('G01',0,0,0,0,0,1,0,'','','f','',0);
+    G01.add('text','elem','');
+    G01.add('textComp','elem','unnamed2','25-32-###-ilankstjfedarASpDleaddkau37naUckdu09ls9a1srX9 sefaOo9dss2skdaYf',1,1,0,1);
+    G01.add('textComp','elem','unnamed1','26-32-###-asjfadaAaSDl',0,0,0,1);
+    G01.init();
+    G01.am('segm','Segment: Check Time_',1,1);
+    G01.am('cond','Time At Limit_','G01.timeAtLimit == true',0);
+    G01.am('actn','Popup Message','MM_popupMsg(\'You are out of time\')','pm');
+    G01.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G01.setDisabled(true);\')','sp');
+    G01.am('end');
+    G01.am('segm','Segment: Correctness_',1,0);
+    G01.am('cond','Correct_01','G01.correct == true',0);
+    G01.am('actn','Popup Message','MM_popupMsg(\'ถูกต้องครับ คุณเยี่ยมจริงๆ\')','pm');
+    G01.am('end');
+    G01.am('cond','Incorrect_01','G01.correct == false',0);
+    G01.am('actn','Popup Message','MM_popupMsg(\'ผิดครับ คำตอบที่ถูก คือ Interpeduncular fossa\')','pm');
+    G01.am('end');
+    G01.am('cond','Unknown Response_','G01.knownResponse == false',0);
+    G01.am('actn','Popup Message','MM_popupMsg(\'Unknown Response\')','pm');
+    G01.am('end');
+    G01.am('segm','Segment: Check Tries_',1,1);
+    G01.am('cond','Tries At Limit_','G01.triesAtLimit == true',0);
+    G01.am('actn','Popup Message','MM_popupMsg(\'You are out of tries\')','pm');
+    G01.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G01.setDisabled(true);\')','sp');
+    G01.am('end');
+  }
+  if (window.newG01 == null) window.newG01 = newG01;
+  if (!window.MM_initIntFns) window.MM_initIntFns = ''; window.MM_initIntFns += 'newG01();';
+//-->
+    </script>
+</blockquote>
+</form>
+<form name="G01controls">
+</form>
+</interaction><interaction name="Text_Singleline02" object="G02" template="050_Text Entry/010_Text_Singleline_03.agt" includesrc="interactionClass.js,elemTextClass.js">
+<form name="G02elem" onSubmit="return false">
+  <blockquote>
+    <p>&nbsp;&nbsp;2. บอกชื่อโครงสร้างที่เข็มหมุดสีม่วงปัก<br>
+        <input name="G02elemInp" type="text" onFocus="G02.e['elem'].focus()" onBlur="G02.e['elem'].update()" value="" size="35">
+        <input name="G02reset" type="BUTTON" value="ขอตอบใหม่" onClick="MM_resetInt('G02','reset','')">
+        <input name="G02judge" type="BUTTON" value="ตรวจคำตอบ" onClick="MM_judgeInt('G02')">
+    <cbi-select object="G02">
+    <script language="JavaScript">
+<!--
+  // Copyright 1998,1999 Macromedia, Inc. All rights reserved.
+  function newG02() {
+    G02 = new MM_interaction('G02',0,0,0,0,0,1,0,'','','f','',0);
+    G02.add('text','elem','');
+    G02.add('textComp','elem','unnamed2','25-32-###-ClaeksrjfedabASrDlaadlka 37paUekdd09us9n1scX9lseeaO',1,1,0,1);
+    G02.add('textComp','elem','unnamed3','27-32-###-RASDliadkag37aUhkd09ts91s X9secaO9des2kdrYfkjeas8sbsl18rsljaad913lkjls 8qeppoiuuerzxmdqjadusujandiuqcejmvlcxzjeaure',1,1,0,1);
+    G02.add('textComp','elem','unnamed1','26-32-###-asjfadaAaSDl',0,0,0,1);
+    G02.init();
+    G02.am('segm','Segment: Check Time_',1,1);
+    G02.am('cond','Time At Limit_','G02.timeAtLimit == true',0);
+    G02.am('actn','Popup Message','MM_popupMsg(\'You are out of time\')','pm');
+    G02.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G02.setDisabled(true);\')','sp');
+    G02.am('end');
+    G02.am('segm','Segment: Correctness_',1,0);
+    G02.am('cond','Correct_01','G02.correct == true',0);
+    G02.am('actn','Popup Message','MM_popupMsg(\'ถูกต้องครับ คุณเยี่ยมจริงๆ\')','pm');
+    G02.am('end');
+    G02.am('cond','Incorrect_01','G02.correct == false',0);
+    G02.am('actn','Popup Message','MM_popupMsg(\'ผิดครับ คำตอบที่ถูก คือ Cerebral peduncle\')','pm');
+    G02.am('end');
+    G02.am('cond','Unknown Response_','G02.knownResponse == false',0);
+    G02.am('actn','Popup Message','MM_popupMsg(\'Unknown Response\')','pm');
+    G02.am('end');
+    G02.am('segm','Segment: Check Tries_',1,1);
+    G02.am('cond','Tries At Limit_','G02.triesAtLimit == true',0);
+    G02.am('actn','Popup Message','MM_popupMsg(\'You are out of tries\')','pm');
+    G02.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G02.setDisabled(true);\')','sp');
+    G02.am('end');
+  }
+  if (window.newG02 == null) window.newG02 = newG02;
+  if (!window.MM_initIntFns) window.MM_initIntFns = ''; window.MM_initIntFns += 'newG02();';
+//-->
+    </script>
+</blockquote>
+</form>
+<form name="G02controls">
+</form>
+</interaction><interaction name="Text_Singleline03" object="G03" template="050_Text Entry/010_Text_Singleline_03.agt" includesrc="interactionClass.js,elemTextClass.js"> 
+<form name="G03elem" onSubmit="return false">
+  <blockquote>
+    <p>&nbsp;&nbsp;3. &nbsp;บอกชื่อโครงสร้างที่เข็มหมุดสีแดงปัก<br>
+        <input name="G03elemInp" type="text" onFocus="G03.e['elem'].focus()" onBlur="G03.e['elem'].update()" value="" size="35">
+        <input name="G03reset" type="BUTTON" value="ขอตอบใหม่" onClick="MM_resetInt('G03','reset','')">
+        <input name="G03judge" type="BUTTON" value="ตรวจคำตอบ" onClick="MM_judgeInt('G03')">
+    <cbi-select object="G03">
+    <script language="JavaScript">
+<!--
+  // Copyright 1998,1999 Macromedia, Inc. All rights reserved.
+  function newG03() {
+    G03 = new MM_interaction('G03',0,0,0,0,0,1,0,'','','f','',0);
+    G03.add('text','elem','');
+    G03.add('textComp','elem','unnamed5','25-32-###-OlacksujfldaoASmDloadtkao37raU kdn09es9r1svX9ese',1,1,0,1);
+    G03.add('textComp','elem','unnamed2','27-32-###-CASDlNadka 37aUIkd09Is91sIX9se',1,1,0,1);
+    G03.add('textComp','elem','unnamed1','26-32-###-ksjfkdaAkSDl',0,0,0,1);
+    G03.init();
+    G03.am('segm','Segment: Check Time_',1,1);
+    G03.am('cond','Time At Limit_','G03.timeAtLimit == true',0);
+    G03.am('actn','Popup Message','MM_popupMsg(\'You are out of time\')','pm');
+    G03.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G03.setDisabled(true);\')','sp');
+    G03.am('end');
+    G03.am('segm','Segment: Correctness_',1,0);
+    G03.am('cond','Correct_01','G03.correct == true',0);
+    G03.am('actn','Popup Message','MM_popupMsg(\'ถูกต้องครับ คุณเยี่ยมจริงๆ\')','pm');
+    G03.am('end');
+    G03.am('cond','Incorrect_01','G03.correct == false',0);
+    G03.am('actn','Popup Message','MM_popupMsg(\'ผิดครับ คำตอบที่ถูก คือ Oculomotor nerve\')','pm');
+    G03.am('end');
+    G03.am('cond','Unknown Response_','G03.knownResponse == false',0);
+    G03.am('actn','Popup Message','MM_popupMsg(\'Unknown Response\')','pm');
+    G03.am('end');
+    G03.am('segm','Segment: Check Tries_',1,1);
+    G03.am('cond','Tries At Limit_','G03.triesAtLimit == true',0);
+    G03.am('actn','Popup Message','MM_popupMsg(\'You are out of tries\')','pm');
+    G03.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G03.setDisabled(true);\')','sp');
+    G03.am('end');
+  }
+  if (window.newG03 == null) window.newG03 = newG03;
+  if (!window.MM_initIntFns) window.MM_initIntFns = ''; window.MM_initIntFns += 'newG03();';
+//-->
+    </script>
+</blockquote>
+</form>
+<form name="G03controls">
+</form>
+</interaction> <interaction name="Text_Singleline04" object="G04" template="050_Text Entry/010_Text_Singleline_03.agt" includesrc="interactionClass.js,elemTextClass.js"> 
+<form name="G04elem" onSubmit="return false">
+  <blockquote>
+    <p> 4. &nbsp;บอกชื่อโครงสร้างที่เข็มหมุดสีเหลืองปัก<br>
+        <input name="G04elemInp" type="text" onFocus="G04.e['elem'].focus()" onBlur="G04.e['elem'].update()" value="" size="35">
+        <input name="G04reset" type="BUTTON" value="ขอตอบใหม่" onClick="MM_resetInt('G04','reset','')">
+        <input name="G04judge" type="BUTTON" value="ตรวจคำตอบ" onClick="MM_judgeInt('G04')">
+    <cbi-select object="G04">
+    <script language="JavaScript">
+<!--
+  // Copyright 1998,1999 Macromedia, Inc. All rights reserved.
+  function newG04() {
+    G04 = new MM_interaction('G04',0,0,0,0,0,1,0,'','','f','',0);
+    G04.add('text','elem','');
+    G04.add('textComp','elem','unnamed2','25-32-###-TlarksijfgdaeASmDliadnkaa37laU kdn09es9r1svX9ese',1,1,0,1);
+    G04.add('textComp','elem','unnamed1','26-32-###-ksjfkdaAkSDl',0,0,0,1);
+    G04.init();
+    G04.am('segm','Segment: Check Time_',1,1);
+    G04.am('cond','Time At Limit_','G04.timeAtLimit == true',0);
+    G04.am('actn','Popup Message','MM_popupMsg(\'You are out of time\')','pm');
+    G04.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G04.setDisabled(true);\')','sp');
+    G04.am('end');
+    G04.am('segm','Segment: Correctness_',1,0);
+    G04.am('cond','Correct_01','G04.correct == true',0);
+    G04.am('actn','Popup Message','MM_popupMsg(\'ถูกต้องครับ คุณเยี่ยมจริงๆ\')','pm');
+    G04.am('end');
+    G04.am('cond','Incorrect_01','G04.correct == false',0);
+    G04.am('actn','Popup Message','MM_popupMsg(\'ผิดครับ คำตอบที่ถูก คือ Trigeminal nerve\')','pm');
+    G04.am('end');
+    G04.am('cond','Unknown Response_','G04.knownResponse == false',0);
+    G04.am('actn','Popup Message','MM_popupMsg(\'Unknown Response\')','pm');
+    G04.am('end');
+    G04.am('segm','Segment: Check Tries_',1,1);
+    G04.am('cond','Tries At Limit_','G04.triesAtLimit == true',0);
+    G04.am('actn','Popup Message','MM_popupMsg(\'You are out of tries\')','pm');
+    G04.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G04.setDisabled(true);\')','sp');
+    G04.am('end');
+  }
+  if (window.newG04 == null) window.newG04 = newG04;
+  if (!window.MM_initIntFns) window.MM_initIntFns = ''; window.MM_initIntFns += 'newG04();';
+//-->
+    </script>
+</blockquote>
+</form>
+</interaction> <interaction name="Text_Singleline05" object="G05" template="050_Text Entry/010_Text_Singleline_03.agt" includesrc="interactionClass.js,elemTextClass.js"> 
+<form name="G05elem" onSubmit="return false">
+  <blockquote>
+    <p> 5. บอกชื่อโครงสร้างที่เข็มหมุดสีฟ้าปัก<br>
+        <input name="G05elemInp" type="text" onFocus="G05.e['elem'].focus()" onBlur="G05.e['elem'].update()" value="" size="35">
+        <input name="G05reset" type="BUTTON" value="ขอตอบใหม่" onClick="MM_resetInt('G05','reset','')">
+        <input name="G05judge" type="BUTTON" value="ตรวจคำตอบ" onClick="MM_judgeInt('G05')">
+    <cbi-select object="G05">
+    <script language="JavaScript">
+<!--
+  // Copyright 1998,1999 Macromedia, Inc. All rights reserved.
+  function newG05() {
+    G05 = new MM_interaction('G05',0,0,0,0,0,1,0,'','','f','',0);
+    G05.add('text','elem','');
+    G05.add('textComp','elem','unnamed2','25-32-###-BlaakssjfidalASaDlrad kap37aaUrkdt09 s9o1sfX9 sepaOo9dns2skd',1,1,0,1);
+    G05.add('textComp','elem','unnamed3','27-32-###-BASDlaadkas37aUikd09ls91saX9seraO9d s2kdpYfkjoas8snsl18sslja',1,1,0,1);
+    G05.add('textComp','elem','unnamed1','26-32-###-ksjfkdaAkSDl',0,0,0,1);
+    G05.init();
+    G05.am('segm','Segment: Check Time_',1,1);
+    G05.am('cond','Time At Limit_','G05.timeAtLimit == true',0);
+    G05.am('actn','Popup Message','MM_popupMsg(\'You are out of time\')','pm');
+    G05.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G05.setDisabled(true);\')','sp');
+    G05.am('end');
+    G05.am('segm','Segment: Correctness_',1,0);
+    G05.am('cond','Correct_01','G05.correct == true',0);
+    G05.am('actn','Popup Message','MM_popupMsg(\'ถูกต้องครับ คุณเยี่ยมจริงๆ\')','pm');
+    G05.am('end');
+    G05.am('cond','Incorrect_01','G05.correct == false',0);
+    G05.am('actn','Popup Message','MM_popupMsg(\'ผิดครับ คำตอบที่ถูก คือ Basilar part of pons\')','pm');
+    G05.am('end');
+    G05.am('cond','Unknown Response_','G05.knownResponse == false',0);
+    G05.am('actn','Popup Message','MM_popupMsg(\'Unknown Response\')','pm');
+    G05.am('end');
+    G05.am('segm','Segment: Check Tries_',1,1);
+    G05.am('cond','Tries At Limit_','G05.triesAtLimit == true',0);
+    G05.am('actn','Popup Message','MM_popupMsg(\'You are out of tries\')','pm');
+    G05.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G05.setDisabled(true);\')','sp');
+    G05.am('end');
+  }
+  if (window.newG05 == null) window.newG05 = newG05;
+  if (!window.MM_initIntFns) window.MM_initIntFns = ''; window.MM_initIntFns += 'newG05();';
+//-->
+    </script>
+</blockquote>
+</form>
+<form name="G05controls">
+</form>
+</interaction> <interaction name="Text_Singleline06" object="G06" template="050_Text Entry/010_Text_Singleline_03.agt" includesrc="interactionClass.js,elemTextClass.js"> 
+<form name="G06elem" onSubmit="return false">
+  <blockquote>
+    <p> 6. บอกชื่อโครงสร้างที่เข็มหมุดสีส้มปัก<br>
+        <input name="G06elemInp" type="text" onFocus="G06.e['elem'].focus()" onBlur="G06.e['elem'].update()" value="" size="35">
+        <input name="G06reset" type="BUTTON" value="ขอตอบใหม่" onClick="MM_resetInt('G06','reset','')">
+        <input name="G06judge" type="BUTTON" value="ตรวจคำตอบ" onClick="MM_judgeInt('G06')">
+    <cbi-select object="G06">
+    <script language="JavaScript">
+<!--
+  // Copyright 1998,1999 Macromedia, Inc. All rights reserved.
+  function newG06() {
+    G06 = new MM_interaction('G06',0,0,0,0,0,1,0,'','','f','',0);
+    G06.add('text','elem','');
+    G06.add('textComp','elem','unnamed3','25-32-###-PlayksrjfadamASiDldad',1,1,0,1);
+    G06.add('textComp','elem','unnamed2','27-32-###-rASDliadkag37aUhkd09ts91s X9sepaO9dys2kdrYfkjaas8smsl18isljadd913',1,1,0,1);
+    G06.add('textComp','elem','unnamed1','27-32-###-lASDlladkal37aU',0,0,0,1);
+    G06.init();
+    G06.am('segm','Segment: Check Time_',1,1);
+    G06.am('cond','Time At Limit_','G06.timeAtLimit == true',0);
+    G06.am('actn','Popup Message','MM_popupMsg(\'You are out of time\')','pm');
+    G06.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G06.setDisabled(true);\')','sp');
+    G06.am('end');
+    G06.am('segm','Segment: Correctness_',1,0);
+    G06.am('cond','Correct_01','G06.correct == true',0);
+    G06.am('actn','Popup Message','MM_popupMsg(\'ถูกต้องครับ คุณเยี่ยมจริงๆ\')','pm');
+    G06.am('end');
+    G06.am('cond','Incorrect_01','G06.correct == false',0);
+    G06.am('actn','Popup Message','MM_popupMsg(\'ผิดครับ คำตอบที่ถูก คือ Pyramid\')','pm');
+    G06.am('end');
+    G06.am('cond','Unknown Response_','G06.knownResponse == false',0);
+    G06.am('actn','Popup Message','MM_popupMsg(\'Unknown Response\')','pm');
+    G06.am('end');
+    G06.am('segm','Segment: Check Tries_',1,1);
+    G06.am('cond','Tries At Limit_','G06.triesAtLimit == true',0);
+    G06.am('actn','Popup Message','MM_popupMsg(\'You are out of tries\')','pm');
+    G06.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G06.setDisabled(true);\')','sp');
+    G06.am('end');
+  }
+  if (window.newG06 == null) window.newG06 = newG06;
+  if (!window.MM_initIntFns) window.MM_initIntFns = ''; window.MM_initIntFns += 'newG06();';
+//-->
+    </script>
+</blockquote>
+</form>
+<form name="G06controls">
+</form>
+</interaction>
+<interaction name="Text_Singleline07" object="G07" template="050_Text Entry/010_Text_Singleline_03.agt" includesrc="interactionClass.js,elemTextClass.js">
+  <form name="G07elem" onSubmit="return false">
+    <blockquote>
+      <p> 7. บอกชื่อร่องที่เข็มหมุดสีเขียวปัก<br>
+          <input name="G07elemInp" type="text" onFocus="G07.e['elem'].focus()" onBlur="G07.e['elem'].update()" value="" size="35">
+          <input name="G07reset" type="BUTTON" value="ขอตอบใหม่" onClick="MM_resetInt('G07','reset','')">
+          <input name="G07judge" type="BUTTON" value="ตรวจคำตอบ" onClick="MM_judgeInt('G07')">
+      <cbi-select object="G07">
+      <script language="JavaScript">
+<!--
+  // Copyright 1998,1999 Macromedia, Inc. All rights reserved.
+  function newG07() {
+    G07 = new MM_interaction('G07',0,0,0,0,0,1,0,'','','f','',0);
+    G07.add('text','elem','');
+    G07.add('textComp','elem','unnamed3','25-32-###-PlarksejfodalASiDlvadakar37yaU kds09us9l1scX9usesaO',1,1,0,1);
+    G07.add('textComp','elem','unnamed1','27-32-###-lASDlladkal37aU',0,0,0,1);
+    G07.init();
+    G07.am('segm','Segment: Check Time_',1,1);
+    G07.am('cond','Time At Limit_','G07.timeAtLimit == true',0);
+    G07.am('actn','Popup Message','MM_popupMsg(\'You are out of time\')','pm');
+    G07.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G07.setDisabled(true);\')','sp');
+    G07.am('end');
+    G07.am('segm','Segment: Correctness_',1,0);
+    G07.am('cond','Correct_01','G07.correct == true',0);
+    G07.am('actn','Popup Message','MM_popupMsg(\'ถูกต้องครับ คุณเยี่ยมจริงๆ\')','pm');
+    G07.am('end');
+    G07.am('cond','Incorrect_01','G07.correct == false',0);
+    G07.am('actn','Popup Message','MM_popupMsg(\'ผิดครับ คำตอบที่ถูก คือ Preolivary sulcus\')','pm');
+    G07.am('end');
+    G07.am('cond','Unknown Response_','G07.knownResponse == false',0);
+    G07.am('actn','Popup Message','MM_popupMsg(\'Unknown Response\')','pm');
+    G07.am('end');
+    G07.am('segm','Segment: Check Tries_',1,1);
+    G07.am('cond','Tries At Limit_','G07.triesAtLimit == true',0);
+    G07.am('actn','Popup Message','MM_popupMsg(\'You are out of tries\')','pm');
+    G07.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G07.setDisabled(true);\')','sp');
+    G07.am('end');
+  }
+  if (window.newG07 == null) window.newG07 = newG07;
+  if (!window.MM_initIntFns) window.MM_initIntFns = ''; window.MM_initIntFns += 'newG07();';
+//-->
+      </script>
+    </blockquote>
+  </form>
+  <form name="G07controls">
+  </form>
+</interaction><interaction name="Text_Singleline08" object="G08" template="050_Text Entry/010_Text_Singleline_03.agt" includesrc="interactionClass.js,elemTextClass.js">
+  <form name="G08elem" onSubmit="return false">
+    <blockquote>
+      <p> 8. บอกชื่อโครงสร้างที่เข็มหมุดสีขาวปัก <br>
+          <input name="G08elemInp" type="text" onFocus="G08.e['elem'].focus()" onBlur="G08.e['elem'].update()" value="" size="35">
+          <input name="G08reset" type="BUTTON" value="ขอตอบใหม่" onClick="MM_resetInt('G08','reset','')">
+          <input name="G08judge" type="BUTTON" value="ตรวจคำตอบ" onClick="MM_judgeInt('G08')">
+      <cbi-select object="G08">
+      <script language="JavaScript">
+<!--
+  // Copyright 1998,1999 Macromedia, Inc. All rights reserved.
+  function newG08() {
+    G08 = new MM_interaction('G08',0,0,0,0,0,1,0,'','','f','',0);
+    G08.add('text','elem','');
+    G08.add('textComp','elem','unnamed2','25-32-###-OlalksijfvdaeAS',1,1,0,1);
+    G08.add('textComp','elem','unnamed1','27-32-###-lASDlladkal37aU',0,0,0,1);
+    G08.init();
+    G08.am('segm','Segment: Check Time_',1,1);
+    G08.am('cond','Time At Limit_','G08.timeAtLimit == true',0);
+    G08.am('actn','Popup Message','MM_popupMsg(\'You are out of time\')','pm');
+    G08.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G08.setDisabled(true);\')','sp');
+    G08.am('end');
+    G08.am('segm','Segment: Correctness_',1,0);
+    G08.am('cond','Correct_01','G08.correct == true',0);
+    G08.am('actn','Popup Message','MM_popupMsg(\'ถูกต้องครับ คุณเยี่ยมจริงๆ\')','pm');
+    G08.am('end');
+    G08.am('cond','Incorrect_01','G08.correct == false',0);
+    G08.am('actn','Popup Message','MM_popupMsg(\'ผิดครับ คำตอบที่ถูก คือ Olive\')','pm');
+    G08.am('end');
+    G08.am('cond','Unknown Response_','G08.knownResponse == false',0);
+    G08.am('actn','Popup Message','MM_popupMsg(\'Unknown Response\')','pm');
+    G08.am('end');
+    G08.am('segm','Segment: Check Tries_',1,1);
+    G08.am('cond','Tries At Limit_','G08.triesAtLimit == true',0);
+    G08.am('actn','Popup Message','MM_popupMsg(\'You are out of tries\')','pm');
+    G08.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G08.setDisabled(true);\')','sp');
+    G08.am('end');
+  }
+  if (window.newG08 == null) window.newG08 = newG08;
+  if (!window.MM_initIntFns) window.MM_initIntFns = ''; window.MM_initIntFns += 'newG08();';
+//-->
+      </script>
+    </blockquote>
+  </form>
+  <form name="G08controls">
+  </form>
+</interaction><interaction name="Text_Singleline09" object="G09" template="050_Text Entry/010_Text_Singleline_03.agt" includesrc="interactionClass.js,elemTextClass.js">
+<form name="G09elem" onSubmit="return false">
+  <blockquote>
+    <p> 9. บอกชื่อร่องที่เข็มหมุดสีชมพูปัก<br>
+        <input name="G09elemInp" type="text" onFocus="G09.e['elem'].focus()" onBlur="G09.e['elem'].update()" value="" size="35">
+        <input name="G09reset" type="BUTTON" value="ขอตอบใหม่" onClick="MM_resetInt('G09','reset','')">
+        <input name="G09judge" type="BUTTON" value="ตรวจคำตอบ" onClick="MM_judgeInt('G09')">
+    <cbi-select object="G09">
+    <script language="JavaScript">
+<!--
+  // Copyright 1998,1999 Macromedia, Inc. All rights reserved.
+  function newG09() {
+    G09 = new MM_interaction('G09',0,0,0,0,0,1,0,'','','f','',0);
+    G09.add('text','elem','');
+    G09.add('textComp','elem','unnamed3','25-32-###-plaokssjftdaoASlDliadvkaa37raUykd 09ss9u1slX9cseuaOs9d',1,1,0,1);
+    G09.add('textComp','elem','unnamed2','27-32-###-pASDloadkas37aUtkd09-s91soX9selaO9dis2kdvYfkjaas8srsl18yslja d913skjlsu8qeploiuucrzxmuqjadssuja',1,1,0,1);
+    G09.add('textComp','elem','unnamed4','29-32-###-ps91sX9oseaO9dss2kdYftkjas8s sl18slojad913lkjls8qiepoiuuvrzxmqjaadsujardiuqejymvcxzj aurek7saj26sfudmqqwoleiralsckdjfmxuzcvmlsskjdfoi',1,1,0,1);
+    G09.add('textComp','elem','unnamed1','27-32-###-lASDlladkal37aU',0,0,0,1);
+    G09.init();
+    G09.am('segm','Segment: Check Time_',1,1);
+    G09.am('cond','Time At Limit_','G09.timeAtLimit == true',0);
+    G09.am('actn','Popup Message','MM_popupMsg(\'You are out of time\')','pm');
+    G09.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G09.setDisabled(true);\')','sp');
+    G09.am('end');
+    G09.am('segm','Segment: Correctness_',1,0);
+    G09.am('cond','Correct_01','G09.correct == true',0);
+    G09.am('actn','Popup Message','MM_popupMsg(\'ถูกต้องครับ คุณเยี่ยมจริงๆ\')','pm');
+    G09.am('end');
+    G09.am('cond','Incorrect_01','G09.correct == false',0);
+    G09.am('actn','Popup Message','MM_popupMsg(\'ผิดครับ คำตอบที่ถูก คือ Postolivary sulcus\')','pm');
+    G09.am('end');
+    G09.am('cond','Unknown Response_','G09.knownResponse == false',0);
+    G09.am('actn','Popup Message','MM_popupMsg(\'Unknown Response\')','pm');
+    G09.am('end');
+    G09.am('segm','Segment: Check Tries_',1,1);
+    G09.am('cond','Tries At Limit_','G09.triesAtLimit == true',0);
+    G09.am('actn','Popup Message','MM_popupMsg(\'You are out of tries\')','pm');
+    G09.am('actn','Set Interaction Properties: Disable Interaction','MM_setIntProps(\'G09.setDisabled(true);\')','sp');
+    G09.am('end');
+  }
+  if (window.newG09 == null) window.newG09 = newG09;
+  if (!window.MM_initIntFns) window.MM_initIntFns = ''; window.MM_initIntFns += 'newG09();';
+//-->
+      </script>
+  </blockquote>
+</form>
+<form name="G09controls">
+</form>
+</interaction>
+<blockquote>
+<blockquote>
+      <blockquote>
+          <blockquote>
+              <p align="left"><a href="testneuro54-031.htm"><img src="file:///D|/anatomy-CAI/neurolab234/test/pic/001Y000A.GIF" width="60" height="23" border="0"></a>&nbsp;<a href="testneuro54-033.htm" target="_parent"><img src="file:///D|/anatomy-CAI/neurolab234/test/pic/001O000B.GIF" width="60" height="26" border="0"></a></p>
+        </blockquote>
+        </blockquote>
+    </blockquote>
+</blockquote>
+<p align="center"><a href="file:///D|/anatomy-CAI/neurolab234B/test/diges-test002.html" target="_parent"></a></p>
+</body>
+</html>
